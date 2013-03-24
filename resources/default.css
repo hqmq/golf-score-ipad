@@ -1,0 +1,11 @@
+#main-window {
+  background-color: linear-gradient(black, #f2f4f6); }
+
+button {
+  border-radius: 8px;
+  font-size: 20px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background-color: #444444;
+}
