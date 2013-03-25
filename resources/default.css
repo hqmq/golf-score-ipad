@@ -1,5 +1,6 @@
 #main-window {
-  background-color: linear-gradient(black, #f2f4f6); }
+  background-color: linear-gradient(black, #f2f4f6);
+}
 
 button {
   border-radius: 8px;
