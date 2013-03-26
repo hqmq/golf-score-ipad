@@ -2,6 +2,10 @@
   background-color: linear-gradient(black, #f2f4f6);
 }
 
+#round {
+  background-color: orange;
+}
+
 #home label {
   color: orange;
   width: 200px;
@@ -15,4 +19,5 @@
   border-radius: 8px;
   left: 412px;
   top: 200px;
+  background-color: black;
 }
