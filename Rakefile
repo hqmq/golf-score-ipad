@@ -14,4 +14,6 @@ Motion::Project::App.setup do |app|
   app.interface_orientations = [:landscape_left, :landscape_right]
 
   app.device_family = :ipad
+
+  app.info_plist['UIStatusBarHidden'] = true
 end
