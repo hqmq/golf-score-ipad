@@ -6,18 +6,32 @@
   background-color: orange;
 }
 
-#home label {
-  color: orange;
-  width: 200px;
-  font-weight: bold;
-  top: 300px;
-  left: 824px;
+#home button {
+  width: 250px;
+  border-radius: 8px;
+  left: 100px;
+  top: 360px;
+  background-color: rgba(50,50,50,0.85);
+  font-size: 36pt;
+  color: white;
 }
 
-#home button {
-  width: 200px;
-  border-radius: 8px;
-  left: 412px;
-  top: 200px;
-  background-color: black;
+#home #title {
+  font-size: 56pt;
+  color: white;
+  top: 10px;
+  left: 100px;
+  background-color: rgba(1,1,1,0);
+  width: 600px;
+  height: 100px;
+
+}
+
+.previous-rounds {
+  height: 400px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: rgba(50,50,50,0.85);
+  top: 250px;
+  left: 700px;
 }
