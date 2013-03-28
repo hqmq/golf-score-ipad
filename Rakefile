@@ -4,6 +4,7 @@ require 'motion/project'
 require 'bundler'
 Bundler.setup
 Bundler.require
+require 'motion-cocoapods'
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
@@ -16,4 +17,8 @@ Motion::Project::App.setup do |app|
   app.device_family = :ipad
 
   app.info_plist['UIStatusBarHidden'] = true
+
+  app.pods do
+    pod 'NanoStore', '~> 2.6.0'
+  end
 end

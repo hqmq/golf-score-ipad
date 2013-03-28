@@ -13,3 +13,4 @@ nbproject
 .eprj
 *.sublime*
 .sass*
+vendor/Pods
