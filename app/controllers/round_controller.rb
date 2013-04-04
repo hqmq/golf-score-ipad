@@ -1,12 +1,13 @@
 class RoundController < UIViewController
-  attr_reader :score_grid, :course_name
-  def viewDidLoad
+  include BW::KVO
+  attr_reader :score_grid, :course_name, :round
+  def init(round)
+    @round = round
+    ret = super()
     view.styleId = 'round'
-    view.when_tapped do
-      presentingViewController.dismissViewControllerAnimated(true, completion:nil)
-    end
     init_score_grid
     init_course_name
+    ret
   end
 
   def init_score_grid
@@ -20,6 +21,20 @@ class RoundController < UIViewController
     course_name.styleClass = 'course-name'
     course_name.setBackgroundColor(UIColor.clearColor)
     course_name.setPlaceholder("Course Name")
+    course_name.returnKeyType = UIReturnKeyDone
+    course_name.delegate = self
     view.addSubview(course_name)
+    observe(course_name, :text) do |stale, fresh|
+      puts "#{stale} -> #{fresh}"
+    end
+    course_name.text = round.course_name
+  end
+
+  def exit
+    presentingViewController.dismissViewControllerAnimated(true, completion:nil)
+  end
+
+  def textFieldShouldReturn(field)
+    field.resignFirstResponder
   end
 end

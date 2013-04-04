@@ -32,7 +32,8 @@ class HomeController < UIViewController
   end
 
   def new_round
-    round_controller = RoundController.alloc.init
+    round = Round.new
+    round_controller = RoundController.alloc.init(round)
     round_controller.modalTransitionStyle = UIModalPresentationFullScreen
     presentViewController(round_controller, animated: true, completion: nil)
   end
