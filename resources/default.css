@@ -3,7 +3,7 @@
 }
 
 #round {
-  background-color: orange;
+  background-image: url(bundle://home.jpg);
 }
 
 #home button {
@@ -34,4 +34,21 @@
   background-color: rgba(50,50,50,0.85);
   top: 250px;
   left: 700px;
+}
+
+.score-grid {
+  height: 568px;
+  width: 924px;
+  left: 50px;
+  top: 100px;
+  background-color: rgba(50,50,50,0.85);
+  border-radius: 20px
+}
+
+.course-name {
+  height: 60px;
+  width: 150px;
+  left: 50px;
+  top: 25px;
+  background-color: rgba(0,0,0,0);
 }
