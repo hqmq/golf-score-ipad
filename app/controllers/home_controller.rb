@@ -26,7 +26,7 @@ class HomeController < UIViewController
   end
 
   def init_round_history
-    @round_history = PreviousRounds.new
+    @round_history = PreviousRounds.new(self)
     @round_history.sizeToFit
     view.addSubview(@round_history)
   end
