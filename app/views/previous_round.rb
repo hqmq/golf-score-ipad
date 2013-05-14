@@ -4,9 +4,8 @@ class PreviousRound < UILabel
     @round = round
     @controller = controller
     styleClass = 'previous-round'
-    puts "Adding previous round #{round.course_name} #{round.created_at}"
     initWithFrame(CGRectZero)
-    self.text = "OHAI"
+    self.text = "#{round.course_name} #{round.created_at}"
     sizeToFit
 
     when_tapped do
