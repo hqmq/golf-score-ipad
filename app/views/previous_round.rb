@@ -1,10 +1,10 @@
 class PreviousRound < UILabel
   attr_reader :round, :controller
-  def initialize(round, controller)
+  def initialize(round, controller, idx)
     @round = round
     @controller = controller
     styleClass = 'previous-round'
-    initWithFrame(CGRectZero)
+    initWithFrame(CGRectZero.down(25*idx))
     self.text = "#{round.course_name} #{round.created_at}"
     sizeToFit
 

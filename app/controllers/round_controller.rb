@@ -7,6 +7,9 @@ class RoundController < UIViewController
     view.styleId = 'round'
     init_score_grid
     init_course_name
+    view.when_tapped do
+      exit
+    end
     ret
   end
 
@@ -25,7 +28,8 @@ class RoundController < UIViewController
     course_name.delegate = self
     view.addSubview(course_name)
     observe(course_name, :text) do |stale, fresh|
-      puts "#{stale} -> #{fresh}"
+      round.course_name = fresh
+      round.save
     end
     course_name.text = round.course_name
   end

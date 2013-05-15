@@ -8,8 +8,8 @@ class PreviousRounds < UIView
   end
 
   def init_labels
-    rounds.each do |r|
-      addSubview( PreviousRound.new(r, controller) )
+    rounds.each_with_index do |r, idx|
+      addSubview( PreviousRound.new(r, controller, idx) )
     end
   end
 
