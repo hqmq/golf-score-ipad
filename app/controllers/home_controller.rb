@@ -25,7 +25,16 @@ class HomeController < UIViewController
     view.addSubview(@add_button)
   end
 
+  def viewWillAppear(animated)
+    @round_history.refresh
+    super
+  end
+
   def init_round_history
+    if @round_history
+      @round_history.removeFromSuperview
+      @round_history = nil
+    end
     @round_history = PreviousRounds.new(self)
     @round_history.sizeToFit
     view.addSubview(@round_history)
@@ -33,6 +42,7 @@ class HomeController < UIViewController
 
   def new_round
     round = Round.new
+    round.created_at = Time.now
     round_controller = RoundController.alloc.init(round)
     round_controller.modalTransitionStyle = UIModalPresentationFullScreen
     presentViewController(round_controller, animated: true, completion: nil)

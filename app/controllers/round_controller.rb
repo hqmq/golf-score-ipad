@@ -35,6 +35,7 @@ class RoundController < UIViewController
   end
 
   def exit
+    #presentingViewController.init_round_history
     presentingViewController.dismissViewControllerAnimated(true, completion:nil)
   end
 

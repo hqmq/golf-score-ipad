@@ -5,8 +5,7 @@ class PreviousRound < UILabel
     @controller = controller
     styleClass = 'previous-round'
     initWithFrame(CGRectZero.down(25*idx))
-    self.text = "#{round.course_name} #{round.created_at}"
-    sizeToFit
+    set_text
 
     when_tapped do
       load_round
@@ -17,5 +16,14 @@ class PreviousRound < UILabel
     round_controller = RoundController.alloc.init(round)
     round_controller.modalTransitionStyle = UIModalPresentationFullScreen
     controller.presentViewController(round_controller, animated: true, completion: nil)
+  end
+
+  def refresh
+    set_text
+  end
+
+  def set_text
+    self.text = "#{round.course_name} #{round.created_at}"
+    sizeToFit
   end
 end
